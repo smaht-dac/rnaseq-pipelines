@@ -1,2 +1,3 @@
-# rnaseq-pipelines
-components for RNA-seq pipelines
+# RNA-seq Pipelines Components
+
+Components for RNA-seq pipelines.
