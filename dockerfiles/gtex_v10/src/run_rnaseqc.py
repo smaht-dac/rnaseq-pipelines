@@ -21,7 +21,7 @@ print('['+datetime.now().strftime("%b %d %H:%M:%S")+'] Running RNA-SeQC', flush=
 cmd = 'rnaseqc {} {} {}'.format(args.genes_gtf, args.bam_file, args.output_dir) \
     + ' -s '+args.prefix \
     + ' -vv ' \
-    + '--coverage' # mod: we want also the detailed coverage
+    + '--coverage' # mod: we also want the detailed coverage
 if args.stranded is not None:
     cmd += ' --stranded '+args.stranded
 if args.bed is not None:
@@ -30,8 +30,7 @@ print('  * command: "{}"'.format(cmd), flush=True)
 subprocess.check_call(cmd, shell=True)
 
 # gzip GCTs
-# mod: we don't need to compress the files anymore
-# comment out
+# mod: we dont need to compress the files anymore
 # subprocess.check_call('gzip {0}.exon_reads.gct {0}.gene_tpm.gct {0}.gene_reads.gct'.format(args.prefix), shell=True)
 
 # mod: archive and compress output
