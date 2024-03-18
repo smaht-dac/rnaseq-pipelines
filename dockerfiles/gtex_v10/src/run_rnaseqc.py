@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Author: Francois Aguet
+# Modified by: Michele Berselli
 import argparse
 import subprocess
 from datetime import datetime
@@ -19,7 +20,8 @@ print('['+datetime.now().strftime("%b %d %H:%M:%S")+'] Running RNA-SeQC', flush=
 
 cmd = 'rnaseqc {} {} {}'.format(args.genes_gtf, args.bam_file, args.output_dir) \
     + ' -s '+args.prefix \
-    + ' -vv'
+    + ' -vv ' \
+    + '--coverage' # mod: we want also the detailed coverage
 if args.stranded is not None:
     cmd += ' --stranded '+args.stranded
 if args.bed is not None:
@@ -28,6 +30,13 @@ print('  * command: "{}"'.format(cmd), flush=True)
 subprocess.check_call(cmd, shell=True)
 
 # gzip GCTs
-subprocess.check_call('gzip {0}.exon_reads.gct {0}.gene_tpm.gct {0}.gene_reads.gct'.format(args.prefix), shell=True)
+# mod: we don't need to compress the files anymore
+# comment out
+# subprocess.check_call('gzip {0}.exon_reads.gct {0}.gene_tpm.gct {0}.gene_reads.gct'.format(args.prefix), shell=True)
+
+# mod: archive and compress output
+subprocess.check_call('tar -czvf {0}.all.tar.gz {0}.*'.format(args.prefix), shell=True)
+# mod: fix extension for tpm file to tsv and gzip
+subprocess.check_call('mv {0}.gene_tpm.gct {0}.gene_tpm.tsv && gzip {0}.gene_tpm.tsv'.format(args.prefix), shell=True)
 
 print('['+datetime.now().strftime("%b %d %H:%M:%S")+'] Finished RNA-SeQC', flush=True)

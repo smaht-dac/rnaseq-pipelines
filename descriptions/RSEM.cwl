@@ -11,7 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: ACCOUNT/gtex_v10:VERSION
 
-baseCommand: [run_RSEM.sh]
+baseCommand: [/src/run_RSEM.sh]
 
 inputs:
   - id: input_transcriptome_bam
@@ -30,10 +30,10 @@ inputs:
 
   - id: is_stranded
     type: string
-    default: 'false'
+    default: "false"
     inputBinding:
       position: 3
-    doc: Set to 'true' if the protocol is strand-specific
+    doc: Set to "true" if the protocol is strand-specific
 
 outputs:
   - id: output_isoforms_tsv

@@ -130,7 +130,7 @@ ENV PATH /opt/rnaseqc:$PATH
 COPY src src/
 RUN chmod +x src/*
 
-COPY run_RSEM.sh
-RUN chmod +x run_RSEM.sh
+COPY run_RSEM.sh src/
+RUN chmod +x src/run_RSEM.sh
 
 CMD ["bash"]
