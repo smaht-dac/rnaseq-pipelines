@@ -35,7 +35,7 @@ subprocess.check_call(cmd, shell=True)
 
 # mod: archive and compress output
 subprocess.check_call('tar -czvf {0}.all.tar.gz {0}.*'.format(args.prefix), shell=True)
-# mod: fix extension for tpm file to tsv and gzip
-subprocess.check_call('mv {0}.gene_tpm.gct {0}.gene_tpm.tsv && gzip {0}.gene_tpm.tsv'.format(args.prefix), shell=True)
+# mod: change extension for tpm file to tsv
+subprocess.check_call('mv {0}.gene_tpm.gct {0}.gene_tpm.tsv'.format(args.prefix), shell=True)
 
 print('['+datetime.now().strftime("%b %d %H:%M:%S")+'] Finished RNA-SeQC', flush=True)

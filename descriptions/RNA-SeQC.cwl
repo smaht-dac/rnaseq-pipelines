@@ -14,7 +14,7 @@ hints:
 baseCommand: [/src/run_rnaseqc.py]
 
 inputs:
-  - id: genes_collapsed_gtf
+  - id: gene_annotation_gtf
     type: File
     inputBinding:
       position: 1
@@ -46,10 +46,10 @@ inputs:
          "rf" or "fr"
 
 outputs:
-  - id: output_gene_tpm_tsv_gz
+  - id: output_gene_tpm_tsv
     type: File
     outputBinding:
-      glob: $(inputs.output_prefix + ".gene_tpm.tsv.gz")
+      glob: $(inputs.output_prefix + ".gene_tpm.tsv")
 
   - id: output_tar_gz
     type: File

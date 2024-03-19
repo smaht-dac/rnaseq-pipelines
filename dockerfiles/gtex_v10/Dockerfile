@@ -1,5 +1,6 @@
 # Modified Dockerfile for GTEx RNA-seq pipeline
-# Original author Francois Aguet
+# Original author: Francois Aguet
+# Modified by: Michele Berselli
 
 #######################################################################
 #     Basic image

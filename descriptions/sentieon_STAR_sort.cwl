@@ -74,7 +74,7 @@ outputs:
     outputBinding:
       glob: star_out/OUT.Aligned.toTranscriptome.out.bam
 
-  - id: output_star_tar_gz
+  - id: output_tar_gz
     type: File
     outputBinding:
       glob: output.tar.gz

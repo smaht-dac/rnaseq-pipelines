@@ -11,10 +11,10 @@
 fastq_r1=$1
 fastq_r2=$2
 
-# Reference data files
+# Reference index files
 star_reference=$3
-# expect a tar.gz file
-# storing the inididual files
+# expect a tar.gz archive
+# storing the individual files
 
 # Read groups information
 sample=$4
@@ -120,11 +120,11 @@ def check_EOF(filename):
         sys.stderr.write('EOF is present\n')
 
 # Main alignment
-print('sorted.bam')
+sys.stderr.write('sorted.bam:\n')
 check_EOF('sorted.bam')
 
 # Transcriptome alignment
-print('toTranscriptome.bam')
+sys.stderr.write('toTranscriptome.bam:\n')
 check_EOF('star_out/OUT.Aligned.toTranscriptome.out.bam')
 "
 

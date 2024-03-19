@@ -8,10 +8,10 @@
 # Input BAM file
 transcriptome_bam=$1
 
-# Reference data files
+# Reference index files
 rsem_reference=$2
-# expect a tar.gz file
-# storing the inididual files
+# expect a tar.gz archive
+# storing the individual files
 
 # Other arguments
 is_stranded=$3 # 'true', 'false'
