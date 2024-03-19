@@ -1,0 +1,60 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: sentieon_STAR_sort
+description: Run Sentieon STAR to generate alignment BAM files |
+             from paired FASTQ files for a single sample. |
+             Sort the main alignment BAM file by coordinates
+
+runner:
+  language: cwl
+  main: sentieon_STAR_sort.cwl
+
+software:
+  - STAR@2.7.10b
+
+category:
+  - Alignment
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_file_r1_fastq_gz:
+    argument_type: file.fastq_gz
+
+  input_file_r2_fastq_gz:
+    argument_type: file.fastq_gz
+
+  genome_reference_star:
+    argument_type: file.tar_gz
+
+  # Required Parameter argument
+  sample_name:
+    argument_type: parameter.string
+
+  # Optional Parameter argument
+  platform:
+    argument_type: parameter.string
+
+  library_id:
+    argument_type: parameter.string
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_bam:
+    argument_type: file.bam
+    secondary_files:
+      - bam_bai
+
+  output_transcriptome_bam:
+    argument_type: file.bam
+
+  output_tar_gz:
+    argument_type: file.tar_gz

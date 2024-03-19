@@ -1,0 +1,33 @@
+################################################################
+# STAR, 2.7.10b
+################################################################
+name: STAR
+version: 2.7.10b
+source_url: https://github.com/alexdobin/STAR
+code: star
+category:
+  - Alignment
+
+---
+
+################################################################
+#  RSEM, v1.3.3
+################################################################
+name: RSEM
+version: v1.3.3
+source_url: https://github.com/deweylab/RSEM
+category:
+  - Transcript Quantification
+  - Gene Quantification
+
+---
+
+################################################################
+# RNA-SeQC, v2.4.2
+################################################################
+name: RNA-SeQC
+version: v2.4.2
+source_url: https://github.com/getzlab/rnaseqc
+category:
+  - Quality Control
+  - Gene Quantification

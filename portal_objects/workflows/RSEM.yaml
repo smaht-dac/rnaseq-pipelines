@@ -1,0 +1,45 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: RSEM
+description: Run RSEM for isoforms and gene quantification
+
+runner:
+  language: cwl
+  main: RSEM.cwl
+
+software:
+  - RSEM@v1.3.3
+
+category:
+  - Transcript Quantification
+  - Gene Quantification
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_transcriptome_bam:
+    argument_type: file.bam
+
+  genome_reference_rsem:
+    argument_type: file.tar_gz
+
+  # Optional Parameter argument
+  is_stranded:
+    argument_type: parameter.string
+    # "true" or "false"
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_isoforms_tsv:
+    argument_type: file.tsv
+
+  output_genes_tsv:
+    argument_type: file.tsv

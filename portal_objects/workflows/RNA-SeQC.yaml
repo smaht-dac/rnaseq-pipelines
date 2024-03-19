@@ -1,0 +1,46 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: RNA-SeQC
+description: Run RNA-SeQC to generate quality metrics |
+             and genes TPM quantification
+
+runner:
+  language: cwl
+  main: RNA-SeQC.cwl
+
+software:
+  - RNA-SeQC@v2.4.2
+
+category:
+  - Quality Control
+  - Gene Quantification
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_file_bam:
+    argument_type: file.bam
+
+  gene_annotation_gtf:
+    argument_type: file.gtf
+
+  # Optional Parameter argument
+  strandedness:
+    argument_type: parameter.string
+    # "rf" or "fr"
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_gene_tpm_tsv:
+    argument_type: file.tsv
+
+  output_tar_gz:
+    argument_type: file.tar_gz
