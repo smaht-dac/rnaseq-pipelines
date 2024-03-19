@@ -3,7 +3,7 @@
 #############################################################
 name: RNA-SeQC
 description: Run RNA-SeQC to generate quality metrics |
-             and genes TPM quantification
+             and gene TPM quantification
 
 runner:
   language: cwl

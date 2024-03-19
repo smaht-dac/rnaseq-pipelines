@@ -57,4 +57,4 @@ outputs:
       glob: $(inputs.output_prefix + ".all.tar.gz")
 
 doc: |
-  Run RNA-SeQC to generate quality metrics and genes TPM quantification
+  Run RNA-SeQC to generate quality metrics and gene TPM quantification

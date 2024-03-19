@@ -47,4 +47,4 @@ outputs:
       glob: genes.tsv
 
 doc: |
-  Run RSEM for isoforms and gene quantification
+  Run RSEM for isoform and gene quantification
