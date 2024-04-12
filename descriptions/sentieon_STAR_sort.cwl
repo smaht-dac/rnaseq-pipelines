@@ -15,7 +15,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: ACCOUNT/sentieon_STAR:VERSION
+    dockerPull: ACCOUNT/star_sentieon:VERSION
 
 baseCommand: [sentieon_STAR_sort.sh]
 
