@@ -20,24 +20,35 @@ hints:
 baseCommand: [sentieon_STAR_sort.sh]
 
 inputs:
-  - id: input_file_r1_fastq_gz
-    type: File
+  - id: input_files_r1_fastq_gz
+    type:
+      -
+        items: File
+        type: array
+        inputBinding:
+          prefix: -1
     inputBinding:
       position: 1
-    doc: Read 1 input file name.|
-         Expect a compressed FASTQ file
+    doc: List of Read 1 input files. |
+         Expect compressed FASTQ files
 
-  - id: input_file_r2_fastq_gz
-    type: File
+  - id: input_files_r2_fastq_gz
+    type:
+      -
+        items: File
+        type: array
+        inputBinding:
+          prefix: -2
     inputBinding:
       position: 2
-    doc: Read 2 input file name. |
-         Expect a compressed FASTQ file
+    doc: List of Read 2 input files. |
+         Expect compressed FASTQ files
 
   - id: genome_reference_star
     type: File
     inputBinding:
       position: 3
+      prefix: -r
     doc: STAR reference index files. |
          Expect a compressed archive
 
@@ -45,6 +56,7 @@ inputs:
     type: string
     inputBinding:
       position: 4
+      prefix: -s
     doc: Name of the sample
 
   - id: library_id
@@ -52,6 +64,7 @@ inputs:
     default: "LIBRARY"
     inputBinding:
       position: 5
+      prefix: -l
     doc: Identifier for the sequencing library preparation
 
   - id: platform
@@ -59,6 +72,7 @@ inputs:
     default: "ILLUMINA"
     inputBinding:
       position: 6
+      prefix: -p
     doc: Name of the sequencing platform
 
 outputs:
@@ -72,7 +86,7 @@ outputs:
   - id: output_transcriptome_bam
     type: File
     outputBinding:
-      glob: star_out/OUT.Aligned.toTranscriptome.out.bam
+      glob: OUT.Aligned.toTranscriptome.out.bam
 
   - id: output_tar_gz
     type: File

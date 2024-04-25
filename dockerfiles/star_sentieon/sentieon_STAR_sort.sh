@@ -6,24 +6,52 @@
 # The main alignment BAM file will be sorted by coordinates.
 # *******************************************
 
-## Command line arguments
-# Input FASTQ files
-fastq_r1=$1
-fastq_r2=$2
-
-# Reference index files
-star_reference=$3
-# expect a tar.gz archive
-# storing the individual files
-
-# Read groups information
-sample=$4
-library=$5
-platform=$6
-
-## Other settings
+# *******************************************
+# COMMAND LINE
+# *******************************************
+# Default values
 nt=$(nproc) # number of threads to use in computation,
             # set to number of cores in the server
+
+# Parser
+while getopts ":r:1:2:s:l:p:" opt; do
+  case $opt in
+    r )
+      star_reference=$OPTARG
+      # expect a tar.gz archive storing the individual files
+      ;;
+    1 )
+      fastq_r1+=("$OPTARG")
+      ;;
+    2 )
+      fastq_r2+=("$OPTARG")
+      ;;
+    s )
+      sample=$OPTARG
+      ;;
+    l )
+      library=$OPTARG
+      ;;
+    p )
+      platform=$OPTARG
+      ;;
+    \? )
+      echo "Invalid option: $OPTARG" 1>&2
+      exit 1
+      ;;
+    : )
+      echo "Invalid option: $OPTARG requires an argument" 1>&2
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# Check for required arguments
+if [ ${#fastq_r1[@]} -eq 0 ] || [ ${#fastq_r2[@]} -eq 0 ] || [ -z $star_reference ] || [ -z $sample ] || [ -z $library ] || [ -z $platform ]; then
+  echo "Usage: $0 -1 <fastq_1.r1> [-1 <fastq_2.r1>] -2 <fastq_1.r2> [-2 <fastq_2.r2>] -r <star_index> -s <sample_id> -l <library_id> -p <platform>" 1>&2
+  exit 1
+fi
 
 # *******************************************
 # FUNCTIONS
@@ -42,6 +70,17 @@ tar -xvzf $star_reference
 # 1. Mapping reads with STAR and
 # sort main alignment by coordinates.
 # ******************************************
+# Convert array to comma-separated string
+fastq_r1=$(IFS=,; echo "${fastq_r1[*]}")
+fastq_r2=$(IFS=,; echo "${fastq_r2[*]}")
+
+# Echo arguments
+echo "FASTQ R1: ${fastq_r1}"
+echo "FASTQ R2: ${fastq_r2}"
+echo "STAR INDEX: $star_reference"
+echo "RG: 'ID:${sample}.$(generate_random_string) SM:${sample} PL:${platform} LB:${sample}.${library}'"
+
+# Run STAR
 sentieon STAR \
   --runThreadN $nt \
   --readFilesIn $fastq_r1 $fastq_r2 \
@@ -92,7 +131,8 @@ sentieon STAR \
 #         ├── OUT._STARgenome/
 #         └── OUT._STARpass1/
 
-# Format output to extract
+# Organize and compress output to extract
+mv star_out/OUT.Aligned.toTranscriptome.out.bam OUT.Aligned.toTranscriptome.out.bam
 tar -czvf output.tar.gz star_out
 
 # ******************************************
@@ -120,12 +160,12 @@ def check_EOF(filename):
         sys.stderr.write('EOF is present\n')
 
 # Main alignment
-sys.stderr.write('sorted.bam:\n')
+sys.stderr.write('\nsorted.bam:\n')
 check_EOF('sorted.bam')
 
 # Transcriptome alignment
-sys.stderr.write('toTranscriptome.bam:\n')
-check_EOF('star_out/OUT.Aligned.toTranscriptome.out.bam')
+sys.stderr.write('\ntoTranscriptome.bam:\n')
+check_EOF('OUT.Aligned.toTranscriptome.out.bam')
 "
 
 python -c "$py_script" || exit 1

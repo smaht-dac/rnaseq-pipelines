@@ -22,10 +22,10 @@ category:
 input:
 
   # Required file arguments
-  input_file_r1_fastq_gz:
+  input_files_r1_fastq_gz:
     argument_type: file.fastq_gz
 
-  input_file_r2_fastq_gz:
+  input_files_r2_fastq_gz:
     argument_type: file.fastq_gz
 
   genome_reference_star:
