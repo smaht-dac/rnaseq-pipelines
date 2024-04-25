@@ -133,7 +133,7 @@ sentieon STAR \
 
 # Organize and compress output to extract
 mv star_out/OUT.Aligned.toTranscriptome.out.bam OUT.Aligned.toTranscriptome.out.bam
-tar -czvf output.tar.gz star_out
+tar -czvf output.tar.gz star_out || exit 1
 
 # ******************************************
 # 2. Index main alignment BAM.

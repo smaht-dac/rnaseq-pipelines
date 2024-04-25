@@ -16,6 +16,7 @@ category:
 name: RSEM
 version: v1.3.3
 source_url: https://github.com/deweylab/RSEM
+code: rsem
 category:
   - Transcript Quantification
   - Gene Quantification
@@ -28,6 +29,7 @@ category:
 name: RNA-SeQC
 version: v2.4.2
 source_url: https://github.com/getzlab/rnaseqc
+code: rnaseqc
 category:
   - Quality Control
   - Gene Quantification

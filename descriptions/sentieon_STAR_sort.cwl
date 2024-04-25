@@ -26,7 +26,7 @@ inputs:
         items: File
         type: array
         inputBinding:
-          prefix: -1
+          prefix: "-1"
     inputBinding:
       position: 1
     doc: List of Read 1 input files. |
@@ -38,7 +38,7 @@ inputs:
         items: File
         type: array
         inputBinding:
-          prefix: -2
+          prefix: "-2"
     inputBinding:
       position: 2
     doc: List of Read 2 input files. |
