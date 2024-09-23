@@ -65,6 +65,39 @@ accession: SMAFID1DK6S4
 ---
 
 ################################################################
+# STAR index, GCA_000001405.15_GRCh38_no_decoy
+#   No ALT and HLA contigs.
+#   Gencode v45 used for transcript annotation
+#   Overhang for 146bp reads
+
+# STAR \
+#   --runMode genomeGenerate \
+#   --genomeDir STARv2710b_assembly38_noALT_noHLA_noDecoy_v45_oh145 \
+#   --genomeFastaFiles Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta \
+#   --sjdbGTFfile gencode.v45.annotation.gtf \
+#   --sjdbOverhang 145
+################################################################
+name: star-index-no-alt-no-hla-gencode45-oh145
+description: STAR genome index. |
+             Version GCA_000001405.15 for build hg38/GRCh38. |
+             Does NOT include ALT contigs. |
+             Does NOT include HLA contigs. |
+             Generated using Gencode v45. |
+             Overhang for 146bp reads
+format: tar_gz
+version: GCA_000001405.15_GRCh38_no_decoy
+category:
+  - Reference Genome
+  - Reference Transcriptome
+type:
+  - Index
+# Required to enable sync with a reference bucket
+uuid: 9cf71531-2aae-47af-8f50-15ef0e215b05
+accession: SMAFIL9D1ASQ
+
+---
+
+################################################################
 # RSEM index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
 #   Gencode v45 used for transcript annotation
