@@ -254,6 +254,8 @@ category:
   - Genome Annotation
 type:
   - Gene Model
+# Required for displaying in the file name
+code: gencode47
 # Required to enable sync with a reference bucket
 uuid: 353dada7-994b-4fb5-9892-90357e910d6e
 accession: SMAFIH5D8Q13
@@ -272,6 +274,8 @@ category:
   - Genome Annotation
 type:
   - Gene Model
+# Required for displaying in the file name
+code: gencode45
 # Required to enable sync with a reference bucket
 uuid: 098fcb63-09ed-45fa-8247-c547c609965b
 accession: SMAFIF5DIQ11
