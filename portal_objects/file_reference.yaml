@@ -1,7 +1,7 @@
 ################################################################
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v47 used for transcript annotation
+#   GENCODE v47 used for transcript annotation
 #   Overhang for 151bp reads
 
 # STAR \
@@ -16,7 +16,7 @@ description: STAR genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v47. |
+             Generated using GENCODE v47. |
              Overhang for 151bp reads
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
@@ -34,7 +34,7 @@ accession: SMAFIDA7K6S9
 ################################################################
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v47 used for transcript annotation
+#   GENCODE v47 used for transcript annotation
 #   Overhang for 100bp reads
 
 # STAR \
@@ -49,7 +49,7 @@ description: STAR genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v47. |
+             Generated using GENCODE v47. |
              Overhang for 100bp reads
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
@@ -67,7 +67,7 @@ accession: SMAFIDGDK63W
 ################################################################
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v47 used for transcript annotation
+#   GENCODE v47 used for transcript annotation
 #   Overhang for 146bp reads
 
 # STAR \
@@ -82,7 +82,7 @@ description: STAR genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v47. |
+             Generated using GENCODE v47. |
              Overhang for 146bp reads
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
@@ -100,7 +100,7 @@ accession: SMAFI33D8ASZ
 ################################################################
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v45 used for transcript annotation
+#   GENCODE v45 used for transcript annotation
 #   Overhang for 151bp reads
 
 # STAR \
@@ -115,7 +115,7 @@ description: STAR genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v45. |
+             Generated using GENCODE v45. |
              Overhang for 151bp reads
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
@@ -133,7 +133,7 @@ accession: SMAFIDGPK6SP
 ################################################################
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v45 used for transcript annotation
+#   GENCODE v45 used for transcript annotation
 #   Overhang for 100bp reads
 
 # STAR \
@@ -148,7 +148,7 @@ description: STAR genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v45. |
+             Generated using GENCODE v45. |
              Overhang for 100bp reads
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
@@ -166,7 +166,7 @@ accession: SMAFID1DK6S4
 ################################################################
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v45 used for transcript annotation
+#   GENCODE v45 used for transcript annotation
 #   Overhang for 146bp reads
 
 # STAR \
@@ -181,7 +181,7 @@ description: STAR genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v45. |
+             Generated using GENCODE v45. |
              Overhang for 146bp reads
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
@@ -199,14 +199,14 @@ accession: SMAFIL9D1ASQ
 ################################################################
 # RSEM index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v47 used for transcript annotation
+#   GENCODE v47 used for transcript annotation
 ################################################################
 name: rsem-index-no-alt-no-hla-gencode47
 description: RSEM genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v47
+             Generated using GENCODE v47
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
 category:
@@ -222,14 +222,14 @@ accession: SMAFI89DXAS6
 ################################################################
 # RSEM index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
-#   Gencode v45 used for transcript annotation
+#   GENCODE v45 used for transcript annotation
 ################################################################
 name: rsem-index-no-alt-no-hla-gencode45
 description: RSEM genome index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
              Does NOT include ALT contigs. |
              Does NOT include HLA contigs. |
-             Generated using Gencode v45
+             Generated using GENCODE v45
 format: tar_gz
 version: GCA_000001405.15_GRCh38_no_decoy
 category:
@@ -243,11 +243,46 @@ accession: SMAFI3HD8AC2
 ---
 
 ################################################################
-# Collapsed gene model, Gencode v47
+# Collapsed gene model, GENCODE v47
 ################################################################
 name: collapsed-genes-gencode
 description: Collapsed gene model. |
-             Generated using Gencode
+             Generated using GENCODE
+format: gtf
+version: 'v47'
+category:
+  - Genome Annotation
+type:
+  - Gene Model
+# Required to enable sync with a reference bucket
+uuid: 353dada7-994b-4fb5-9892-90357e910d6e
+accession: SMAFIH5D8Q13
+
+---
+
+################################################################
+# Collapsed gene model, GENCODE v45
+################################################################
+name: collapsed-genes-gencode
+description: Collapsed gene model. |
+             Generated using GENCODE
+format: gtf
+version: 'v45'
+category:
+  - Genome Annotation
+type:
+  - Gene Model
+# Required to enable sync with a reference bucket
+uuid: 098fcb63-09ed-45fa-8247-c547c609965b
+accession: SMAFIF5DIQ11
+
+---
+
+################################################################
+# GENCODE, v47
+################################################################
+name: gencode
+description: GENCODE comprehensive gene annotation
 format: gtf
 version: 'v47'
 category:
@@ -257,25 +292,5 @@ type:
 # Required for displaying in the file name
 code: gencode47
 # Required to enable sync with a reference bucket
-uuid: 353dada7-994b-4fb5-9892-90357e910d6e
-accession: SMAFIH5D8Q13
-
----
-
-################################################################
-# Collapsed gene model, Gencode v45
-################################################################
-name: collapsed-genes-gencode
-description: Collapsed gene model. |
-             Generated using Gencode
-format: gtf
-version: 'v45'
-category:
-  - Genome Annotation
-type:
-  - Gene Model
-# Required for displaying in the file name
-code: gencode45
-# Required to enable sync with a reference bucket
-uuid: 098fcb63-09ed-45fa-8247-c547c609965b
-accession: SMAFIF5DIQ11
+uuid: 8c486032-d57a-4b3e-9325-6d6df7a44ff4
+accession: SMAFIF5AI7FT
