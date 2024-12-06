@@ -290,7 +290,9 @@ category:
 type:
   - Gene Model
 # Required for displaying in the file name
-code: gencode47
+code: gencode
+# Used for display in the portal
+title: GENCODE
 # Required to enable sync with a reference bucket
 uuid: 8c486032-d57a-4b3e-9325-6d6df7a44ff4
 accession: SMAFIF5AI7FT
