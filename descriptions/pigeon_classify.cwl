@@ -17,6 +17,7 @@ inputs:
   - id: input_file_gff
     type: File
     inputBinding:
+      prefix: --gff
       position: 1
     secondaryFiles:
       - .pgi
@@ -25,6 +26,7 @@ inputs:
   - id: input_file_gtf
     type: File
     inputBinding:
+      prefix: --gtf
       position: 2
     secondaryFiles:
       - .pgi
@@ -33,11 +35,30 @@ inputs:
   - id: genome_reference_fasta
     type: File
     inputBinding:
+      prefix: --ref
       position: 3
     secondaryFiles:
       - ^.dict
       - .fai
     doc: Genome reference in FASTA format with the corresponding index files
+
+  - id: refTSS_bed
+    type: File
+    default: null
+    inputBinding:
+      prefix: --cage-peak
+      position: 4
+    secondaryFiles:
+      - .pgi
+    doc: Output file from pigeon prepare with CAGE peaks in BED format
+
+  - id: polyA_txt
+    type: File
+    default: null
+    inputBinding:
+      prefix: --poly-a
+      position: 5
+    doc: Path to the polyA motif list in custom TXT format
 
 outputs:
   - id: output_junctions_txt

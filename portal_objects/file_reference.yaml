@@ -275,3 +275,50 @@ type:
 # Required to enable sync with a reference bucket
 uuid: 098fcb63-09ed-45fa-8247-c547c609965b
 accession: SMAFIF5DIQ11
+
+---
+
+################################################################
+# CAGE peaks, 2022-08-23
+#
+## https://downloads.pacbcloud.com/public/dataset/Kinnex-full-length-RNA/
+#   REF-pigeon_ref_sets/Human_hg38_Gencode_v39/refTSS_v3.3_human_coordinate.hg38.sorted.bed
+#
+## https://downloads.pacbcloud.com/public/dataset/Kinnex-full-length-RNA/
+#   REF-pigeon_ref_sets/Human_hg38_Gencode_v39/refTSS_v3.3_human_coordinate.hg38.sorted.bed.pgi
+################################################################
+name: cage-tss-peaks
+description: Sorted and indexed CAGE peaks. |
+             Released by PacBio
+format: bed
+version: '08232022'
+secondary_files:
+  - bed_pgi
+category:
+  - Genome Annotation
+type:
+  - Gene Model
+# Required to enable sync with a reference bucket
+uuid: b02f3ee2-a5f0-4c63-b406-cc9b55edc3d4
+accession: SMAFI25KIQZ5
+
+---
+
+################################################################
+# polyA motif list in custom format, 2022-08-23
+#
+## https://downloads.pacbcloud.com/public/dataset/Kinnex-full-length-RNA/
+#   REF-pigeon_ref_sets/Human_hg38_Gencode_v39/polyA.list.txt
+################################################################
+name: pigeon-polyA-list
+description: polyA motif list in custom format. |
+             Released by PacBio
+format: txt
+version: '08232022'
+category:
+  - Genome Annotation
+type:
+  - Gene Model
+# Required to enable sync with a reference bucket
+uuid: db1e7299-8163-48a1-be6c-79dccc355a9b
+accession: SMAFIH5KPQQ4
