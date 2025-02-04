@@ -7,12 +7,13 @@
 
 # Usage function
 usage() {
-    echo "Usage: $0 -g <collapsed_sorted_gff> -a <annotations_gtf> -r <reference_fasta> [--cage-peak <refTSS_bed>] [--poly-a <polyA_txt>]"
+    echo "Usage: $0 -g <collapsed_sorted_gff> -a <annotations_gtf> -r <reference_fasta> -f <flnc_counts> [--cage-peak <refTSS_bed>] [--poly-a <polyA_txt>]"
     echo
     echo "Arguments:"
     echo "  -g, --gff         Path to the GFF file from pigeon prepare"
     echo "  -a, --gtf         Path to the GTF file from pigeon prepare"
     echo "  -r, --ref         Path to the genome reference FASTA file"
+    echo "  -f, --flc         Path to the FLNC counts TXT file from isoseq collapse"
     echo "  --cage-peak       (Optional) Path to the CAGE peaks in BED format from pigeon prepare"
     echo "  --poly-a          (Optional) Path to the polyA motif list in custom TXT format"
     exit 1
@@ -37,6 +38,10 @@ while [[ $# -gt 0 ]]; do
             reference_fasta="$2"
             shift 2
             ;;
+        -f|--flc)
+            flnc_counts="$2"
+            shift 2
+            ;;
         --cage-peak)
             cage_peak="$2"
             shift 2
@@ -56,13 +61,13 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Validate required arguments
-if [[ -z "$collapsed_sorted_gff" || -z "$annotations_gtf" || -z "$reference_fasta" ]]; then
+if [[ -z "$collapsed_sorted_gff" || -z "$annotations_gtf" || -z "$reference_fasta" || -z "$flnc_counts" ]]; then
     echo "Error: Missing required arguments."
     usage
 fi
 
 # Generate command
-cmd="pigeon classify $collapsed_sorted_gff $annotations_gtf $reference_fasta"
+cmd="pigeon classify $collapsed_sorted_gff $annotations_gtf $reference_fasta --fl $flnc_counts"
 
 # Add optional arguments
 [[ -n "$cage_peak" ]] && cmd+=" --cage-peak $cage_peak"

@@ -23,11 +23,19 @@ inputs:
     doc: Input file in BAM format and corresponding index file. |
          Genome aligned reads from pbmm2
 
+  - id: input_flnc_bam
+    type: File
+    secondaryFiles:
+      - .pbi
+    inputBinding:
+      position: 2
+    doc: FLNC input file in BAM format and corresponding index file
+
   - id: output_prefix
     type: string
     default: "out"
     inputBinding:
-      position: 2
+      position: 3
     doc: Prefix for output files
 
 outputs:
@@ -40,6 +48,11 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output_prefix + ".fa")
+
+  - id: output_count_txt
+    type: File
+    outputBinding:
+      glob: $(inputs.output_prefix + ".flnc_count.txt")
 
   - id: output_group_txt
     type: File

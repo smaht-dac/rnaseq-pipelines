@@ -42,12 +42,19 @@ inputs:
       - .fai
     doc: Genome reference in FASTA format with the corresponding index files
 
+  - id: input_count_txt
+    type: File
+    inputBinding:
+      prefix: --flc
+      position: 4
+    doc: FLNC counts TXT file from isoseq collapse
+
   - id: refTSS_bed
     type: File
     default: null
     inputBinding:
       prefix: --cage-peak
-      position: 4
+      position: 5
     secondaryFiles:
       - .pgi
     doc: Output file from pigeon prepare with CAGE peaks in BED format
@@ -57,7 +64,7 @@ inputs:
     default: null
     inputBinding:
       prefix: --poly-a
-      position: 5
+      position: 6
     doc: Path to the polyA motif list in custom TXT format
 
 outputs:

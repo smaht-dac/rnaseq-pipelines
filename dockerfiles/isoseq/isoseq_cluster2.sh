@@ -11,8 +11,8 @@ usage() {
     echo
     echo "Arguments:"
     echo "  output_prefix     Prefix for output files"
-    echo "  input_bam1        Path to the first BAM file"
-    echo "  input_bam2 ...    Paths to additional BAM files (optional)"
+    echo "  input_bam1        Path to the first FLNC (Full-length non-chimeric) BAM file"
+    echo "  input_bam2 ...    Paths to additional FLNC BAM files (optional)"
     exit 1
 }
 
