@@ -25,7 +25,7 @@ fi
 
 # Input arguments
 input_bam=$1
-flnc_bam= $2
+flnc_bam=$2
 output_prefix=$3
 
 # Run isoseq collapse
