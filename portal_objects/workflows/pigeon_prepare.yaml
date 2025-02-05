@@ -1,0 +1,46 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: pigeon_prepare
+description: Run pigeon prepare
+
+runner:
+  language: cwl
+  main: pigeon_prepare.cwl
+
+software:
+  - Pigeon@1.3.0
+
+category:
+  - Format Conversion
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  gencode_annotation_gtf:
+    argument_type: file.gtf
+
+  genome_reference_fasta:
+    argument_type: file.fa
+
+  input_file_gff:
+    argument_type: file.gff
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_gtf:
+    argument_type: file.gtf
+    secondary_files:
+      - gtf_pgi
+
+  output_file_gff:
+    argument_type: file.gff
+    secondary_files:
+      - gff_pgi

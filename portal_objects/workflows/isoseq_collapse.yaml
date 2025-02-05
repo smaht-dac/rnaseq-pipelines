@@ -1,0 +1,52 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: isoseq_collapse
+description: Run isoseq collapse
+
+runner:
+  language: cwl
+  main: isoseq_collapse.cwl
+
+software:
+  - IsoSeq@4.2.0
+
+category:
+  - Alignment Manipulation
+  - Transcript Quantification
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_file_bam:
+    argument_type: file.bam
+
+  input_flnc_bam:
+    argument_type: file.bam
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_gff:
+    argument_type: file.gff
+
+  output_file_fasta:
+    argument_type: file.fa
+
+  output_count_txt:
+    argument_type: file.txt
+
+  output_group_txt:
+    argument_type: file.txt
+
+  output_report_json:
+    argument_type: file.json
+
+  output_stat_txt:
+    argument_type: file.txt
