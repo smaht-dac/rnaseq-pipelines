@@ -289,9 +289,10 @@ accession: SMAFIF5DIQ11
 ################################################################
 name: cage-tss-peaks
 description: Sorted and indexed CAGE peaks. |
-             Released by PacBio
+             Released by PacBio. |
+             Build hg38/GRCh38
 format: bed
-version: '08232022'
+version: 'GRCh38_08232022'
 secondary_files:
   - bed_pgi
 category:
@@ -312,9 +313,10 @@ accession: SMAFI25KIQZ5
 ################################################################
 name: pigeon-polyA-list
 description: polyA motif list in custom format. |
-             Released by PacBio
+             Released by PacBio. |
+             Build hg38/GRCh38
 format: txt
-version: '08232022'
+version: 'GRCh38_08232022'
 category:
   - Genome Annotation
 type:
