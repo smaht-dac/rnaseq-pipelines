@@ -10,7 +10,7 @@ usage() {
     echo "Usage: $0 <classification_txt> <output_prefix>"
     echo
     echo "Arguments:"
-    echo "  classification_txt   Path to the filtered classification file from pigeon filter"
+    echo "  classification_txt   Path to the filtered classification TXT file from pigeon filter"
     echo "  output_prefix        Prefix for output files"
     exit 1
 }

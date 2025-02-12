@@ -2,7 +2,7 @@
 
 # *******************************************
 # Run pigeon prepare to generate the reference and 
-# sort the transcript input data for pigeon
+# sort the transcript input data for pigeon.
 # *******************************************
 
 # Usage function
