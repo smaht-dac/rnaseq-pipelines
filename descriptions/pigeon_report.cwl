@@ -18,7 +18,7 @@ inputs:
     type: File
     inputBinding:
       position: 1
-    doc: Classification TXT file from pigeon filter
+    doc: Classification file from pigeon filter in TXT format
 
   - id: output_prefix
     type: string
