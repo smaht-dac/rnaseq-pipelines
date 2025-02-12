@@ -10,8 +10,8 @@ usage() {
     echo "Usage: $0 <classification_txt> <junctions_txt> <collapsed_sorted_gff> <output_prefix>"
     echo
     echo "Arguments:"
-    echo "  classification_txt   Path to the classification file from pigeon classify"
-    echo "  junctions_txt        Path to the junctions file from pigeon classify"
+    echo "  classification_txt   Path to the classification TXT file from pigeon classify"
+    echo "  junctions_txt        Path to the junctions TXT file from pigeon classify"
     echo "  collapsed_sorted_gff Path to the GFF file from pigeon prepare"
     echo "  output_prefix        Prefix for the output files"
     exit 1

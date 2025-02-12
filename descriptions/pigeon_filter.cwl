@@ -18,13 +18,13 @@ inputs:
     type: File
     inputBinding:
       position: 1
-    doc: Classification file from pigeon classify
+    doc: Classification TXT file from pigeon classify
 
   - id: input_junctions_txt
     type: File
     inputBinding:
       position: 2
-    doc: Junctions file from pigeon classify
+    doc: Junctions TXT file from pigeon classify
 
   - id: input_file_gff
     type: File
