@@ -1,0 +1,59 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: pigeon_classify
+description: Run pigeon classify
+
+runner:
+  language: cwl
+  main: pigeon_classify.cwl
+
+software:
+  - Pigeon@1.3.0
+
+category:
+  - Annotation
+  - Quality Control
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_file_gff:
+    argument_type: file.gff
+
+  input_file_gtf:
+    argument_type: file.gtf
+
+  genome_reference_fasta:
+    argument_type: file.fa
+
+  input_count_txt:
+    argument_type: file.txt
+
+  # Optional file arguments
+  refTSS_bed:
+    argument_type: file.bed
+
+  polyA_txt:
+    argument_type: file.txt
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_junctions_txt:
+    argument_type: file.txt
+
+  output_classification_txt:
+    argument_type: file.txt
+
+  output_report_json:
+    argument_type: file.json
+
+  output_summary_txt:
+    argument_type: file.txt

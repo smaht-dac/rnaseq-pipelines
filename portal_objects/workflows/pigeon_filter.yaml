@@ -1,0 +1,55 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: pigeon_filter
+description: Run pigeon filter
+
+runner:
+  language: cwl
+  main: pigeon_filter.cwl
+
+software:
+  - Pigeon@1.3.0
+
+category:
+  - Annotation
+  - Quality Control
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_classification_txt:
+    argument_type: file.txt
+
+  input_junctions_txt:
+    argument_type: file.txt
+
+  input_file_gff:
+    argument_type: file.gff
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_reasons_txt:
+    argument_type: file.txt
+
+  output_classification_txt:
+    argument_type: file.txt
+
+  output_junctions_txt:
+    argument_type: file.txt
+
+  output_file_gff:
+    argument_type: file.gff
+
+  output_summary_txt:
+    argument_type: file.txt
+
+  output_report_json:
+    argument_type: file.json

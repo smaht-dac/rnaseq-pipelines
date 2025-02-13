@@ -1,0 +1,38 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: isoseq_cluster2
+description: Run isoseq cluster2
+
+runner:
+  language: cwl
+  main: isoseq_cluster2.cwl
+
+software:
+  - IsoSeq@4.2.0
+
+category:
+  - Alignment Manipulation
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_files_bam:
+    argument_type: file.bam
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_bam:
+    argument_type: file.bam
+    secondary_files:
+      - bam_pbi
+
+  output_cluster_csv:
+    argument_type: file.csv

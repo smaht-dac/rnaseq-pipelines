@@ -1,0 +1,33 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: pigeon_report
+description: Run pigeon report
+
+runner:
+  language: cwl
+  main: pigeon_report.cwl
+
+software:
+  - Pigeon@1.3.0
+
+category:
+  - Quality Control
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_classification_txt:
+    argument_type: file.txt
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_saturation_txt:
+    argument_type: file.txt
