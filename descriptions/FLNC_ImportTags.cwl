@@ -24,7 +24,8 @@ inputs:
          The file must be sorted and indexed
 
   - id: output_file_bam
-    type: File
+    type: string
+    default: "output.bam"
     inputBinding:
       prefix: --output_flnc
     doc: Output FLNC file in BAM format. |
