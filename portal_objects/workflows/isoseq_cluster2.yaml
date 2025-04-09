@@ -23,6 +23,10 @@ input:
   input_files_bam:
     argument_type: file.bam
 
+  # Optional parameters arguments
+  singletons:
+    argument_type: parameter.boolean
+
 ## Output information #######################################
 #     Output files and quality controls
 #############################################################

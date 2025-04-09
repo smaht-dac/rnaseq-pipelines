@@ -28,7 +28,7 @@ inputs:
     default: "output.bam"
     inputBinding:
       prefix: --output_flnc
-    doc: Output FLNC file in BAM format. |
+    doc: Name for the output FLNC file in BAM format. |
          The file will be sorted and indexed. |
          This is the annotated FLNC file
 
