@@ -26,6 +26,14 @@ RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
 ENV LC_ALL=en_US.UTF-8
 
 #######################################################################
+#     Software
+#######################################################################
+## Conda install
+#- pysam required by FLNC_ImportTags.py
+RUN conda install -c bioconda -y pysam==0.21.0 && \
+    conda clean -a -y -f
+
+#######################################################################
 #     Scripts
 #######################################################################
 ## FLNC_ImportTags
