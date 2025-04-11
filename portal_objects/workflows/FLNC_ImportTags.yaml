@@ -1,0 +1,49 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: FLNC_ImportTags
+description: Run FLNC_ImportTags.py to import IsoSeq and |
+             Pigeon annotations to the FLNC BAM file as tags
+
+runner:
+  language: cwl
+  main: FLNC_ImportTags.cwl
+
+category:
+  - Annotation
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file arguments
+  input_file_bam:
+    argument_type: file.bam
+
+  input_stat_txt:
+    argument_type: file.txt
+
+  input_classification_txt:
+    argument_type: file.txt
+
+  # Optional parameters arguments
+  index:
+    argument_type: parameter.boolean
+
+  nthreads:
+    argument_type: parameter.integer
+
+  add_group:
+    argument_type: parameter.boolean
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_bam:
+    argument_type: file.bam
+    secondary_files:
+      - bam_bai
