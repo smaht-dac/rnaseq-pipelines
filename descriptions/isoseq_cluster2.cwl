@@ -20,15 +20,23 @@ inputs:
         items: File
         type: array
     inputBinding:
-      position: 2
+      position: 3
     doc: List of FLNC input files in BAM format
 
   - id: output_prefix
     type: string
     default: "out"
     inputBinding:
-      position: 1
+      position: 2
     doc: Prefix for output files
+
+  - id: singletons
+    type: boolean
+    default: null
+    inputBinding:
+      position: 1
+      prefix: --singletons
+    doc: Flag to include singletons in the output
 
 outputs:
   - id: output_file_bam

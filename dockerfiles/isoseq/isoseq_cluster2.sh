@@ -7,14 +7,22 @@
 
 # Usage function
 usage() {
-    echo "Usage: $0 <output_prefix> <input_bam1> [<input_bam2> ...]"
+    echo "Usage: $0 [--singletons] <output_prefix> <input_bam1> [<input_bam2> ...]"
     echo
     echo "Arguments:"
+    echo "  --singletons      (Optional) Include singleton isoforms in clustering"
     echo "  output_prefix     Prefix for output files"
     echo "  input_bam1        Path to the first FLNC (Full-length non-chimeric) BAM file"
     echo "  input_bam2 ...    Paths to additional FLNC BAM files (optional)"
     exit 1
 }
+
+# Parse optional flag --singletons
+singletons_flag=""
+if [[ $1 == "--singletons" ]]; then
+    singletons_flag="--singletons"
+    shift 1
+fi
 
 # Validate arguments
 if [[ $# -lt 2 ]]; then
@@ -25,6 +33,9 @@ fi
 # Input arguments
 output_prefix=$1  # First argument is the output prefix
 shift 1           # Shift arguments so $@ contains only the BAM files to use
+
+# Reset the FOFN file (truncate if it exists, or create a new one)
+: > flnc.fofn
 
 # Append each argument to the FOFN file
 for file in $@; do
@@ -38,7 +49,7 @@ done
 
 # Run isoseq cluster2
 echo "Running isoseq cluster2..."
-isoseq cluster2 flnc.fofn ${output_prefix}.bam || {
+isoseq cluster2 $singletons_flag flnc.fofn ${output_prefix}.bam || {
     echo "Error: isoseq cluster2 failed!"
     exit 1
 }

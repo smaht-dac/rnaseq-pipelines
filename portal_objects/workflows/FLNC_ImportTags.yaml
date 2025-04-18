@@ -1,18 +1,16 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: isoseq_cluster2
-description: Run isoseq cluster2
+name: FLNC_ImportTags
+description: Run FLNC_ImportTags.py to import IsoSeq and |
+             Pigeon annotations to the FLNC BAM file as tags
 
 runner:
   language: cwl
-  main: isoseq_cluster2.cwl
-
-software:
-  - IsoSeq@4.2.0
+  main: FLNC_ImportTags.cwl
 
 category:
-  - Alignment Manipulation
+  - Annotation
 
 ## Input information ########################################
 #     Input files and parameters
@@ -20,11 +18,23 @@ category:
 input:
 
   # Required file arguments
-  input_files_bam:
+  input_file_bam:
     argument_type: file.bam
 
+  input_stat_txt:
+    argument_type: file.txt
+
+  input_classification_txt:
+    argument_type: file.txt
+
   # Optional parameters arguments
-  singletons:
+  index:
+    argument_type: parameter.boolean
+
+  nthreads:
+    argument_type: parameter.integer
+
+  add_group:
     argument_type: parameter.boolean
 
 ## Output information #######################################
@@ -36,7 +46,4 @@ output:
   output_file_bam:
     argument_type: file.bam
     secondary_files:
-      - bam_pbi
-
-  output_cluster_csv:
-    argument_type: file.csv
+      - bam_bai
