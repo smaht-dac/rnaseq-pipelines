@@ -2,6 +2,39 @@
 # STAR index, GCA_000001405.15_GRCh38_no_decoy
 #   No ALT and HLA contigs.
 #   GENCODE v47 used for transcript annotation
+#   Overhang for 150bp reads
+
+# STAR \
+#   --runMode genomeGenerate \
+#   --genomeDir STARv2710b_assembly38_noALT_noHLA_noDecoy_v47_oh149 \
+#   --genomeFastaFiles Homo_sapiens_assembly38_noALT_noHLA_noDecoy.fasta \
+#   --sjdbGTFfile gencode.v47.annotation.gtf \
+#   --sjdbOverhang 149
+################################################################
+name: star-index-no-alt-no-hla-gencode47-oh149
+description: STAR genome index. |
+             Version GCA_000001405.15 for build hg38/GRCh38. |
+             Does NOT include ALT contigs. |
+             Does NOT include HLA contigs. |
+             Generated using GENCODE v47. |
+             Overhang for 150bp reads
+format: tar_gz
+version: GCA_000001405.15_GRCh38_no_decoy
+category:
+  - Reference Genome
+  - Reference Transcriptome
+type:
+  - Index
+# Required to enable sync with a reference bucket
+uuid: cf965cb0-1a3c-404e-97ca-9e847e31f052
+accession: SMAFILA1C4SQ
+
+---
+
+################################################################
+# STAR index, GCA_000001405.15_GRCh38_no_decoy
+#   No ALT and HLA contigs.
+#   GENCODE v47 used for transcript annotation
 #   Overhang for 151bp reads
 
 # STAR \
