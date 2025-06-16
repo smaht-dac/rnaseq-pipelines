@@ -13,7 +13,7 @@ parser.add_argument('bam_file', type=str, help='BAM file')
 parser.add_argument('prefix', type=str, default='Reads', help='Prefix for output files; usually sample_id')
 parser.add_argument('-o', '--output_dir', default=os.getcwd(), help='Output directory')
 # mod: --stranded argument modified to allow for unstranded
-parser.add_argument('--stranded', type=str, choices=['rf', 'fr', 'unstranded'], help='Strandedness for the library')
+parser.add_argument('--stranded', type=str.lower, choices=['rf', 'fr', 'unstranded'], help='Strandedness for the library')
 parser.add_argument('--bed', default=None, help='BED file with intervals for estimating insert size distribution')
 args = parser.parse_args()
 
