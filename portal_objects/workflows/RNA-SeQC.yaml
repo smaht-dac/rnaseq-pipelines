@@ -31,7 +31,7 @@ input:
   # Optional Parameter argument
   strandedness:
     argument_type: parameter.string
-    # "rf" or "fr"
+    # "rf" or "fr" or "unstranded" (default: "unstranded")
 
 ## Output information #######################################
 #     Output files and quality controls

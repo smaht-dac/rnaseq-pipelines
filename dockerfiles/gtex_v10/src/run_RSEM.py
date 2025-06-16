@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Author: Francois Aguet
+# Modified by: Michele Berselli
 
 import argparse
 import os.path
@@ -22,7 +23,8 @@ parser.add_argument('-o', '--output_dir', default='.', help='Output directory')
 parser.add_argument('--max_frag_len', default='1000', help='Maximum fragment length')
 parser.add_argument('--estimate_rspd', type=str.lower, choices=['true', 'false'], default='true', help='Set to estimate the read start position distribution from data (recommended)')
 parser.add_argument('--calc_ci', type=str.lower, choices=['true', 'false'], default='false', help='Calculate 95% credibility intervals and posterior mean estimates')
-parser.add_argument('--is_stranded', type=str.lower, choices=['true', 'false'], default='false', help='Stranded protocol')
+# mod: --is_stranded argument modified to --stranded to allow for unstranded
+parser.add_argument('--stranded', type=str.lower, choices=['rf', 'fr', 'unstranded'], help='Strandedness of the library')
 parser.add_argument('--paired_end', type=str.lower, choices=['true', 'false'], default='true', help='Paired-end protocol')
 parser.add_argument('-t', '--threads', default='4', help='Number of threads')
 parser.add_argument('--bowtie_version', choices=['1', '2'], default='2', help='Select Bowtie version')
@@ -40,9 +42,16 @@ with cd(args.output_dir):
 
     if args.calc_ci=='true':
         cmd += ' --calc-ci'
-
-    if args.is_stranded=='true':
+    # mod: added logic for strandedness option
+    # reference https://rnabio.org/module-09-appendix/0009/12/01/StrandSettings/
+    if args.stranded == 'rf':
         cmd += ' --forward-prob 0.0'
+    elif args.stranded == 'fr':
+        cmd += ' --forward-prob 1.0'
+    elif args.stranded == 'unstranded':
+        cmd += ' --forward-prob 0.5'
+    else:
+        raise ValueError('Invalid strandedness option: '+args.stranded)
 
     if os.path.splitext(args.input_file)[1]=='.bam':
         cmd += ' --bam '+args.input_file+' '+os.path.join(args.rsem_ref_dir,'rsem_reference')+' '+args.prefix+'.rsem'

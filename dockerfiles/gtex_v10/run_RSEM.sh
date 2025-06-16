@@ -14,7 +14,7 @@ rsem_reference=$2
 # storing the individual files
 
 # Other arguments
-is_stranded=$3 # 'true', 'false'
+strandedness=$3 # "rf" or "fr" or "unstranded"
 
 ## Other settings
 nt=$(nproc) # number of threads to use in computation,
@@ -28,7 +28,7 @@ tar -xvzf $rsem_reference
         . \
         $transcriptome_bam \
         OUT \
-        --is_stranded $is_stranded \
+        --stranded $strandedness \
         --threads $nt || exit 1
 
 ## Rename output

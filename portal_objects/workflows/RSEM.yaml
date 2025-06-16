@@ -28,9 +28,9 @@ input:
     argument_type: file.tar_gz
 
   # Optional Parameter argument
-  is_stranded:
+  strandedness:
     argument_type: parameter.string
-    # "true" or "false"
+    # "rf" or "fr" or "unstranded" (default: "unstranded")
 
 ## Output information #######################################
 #     Output files and quality controls

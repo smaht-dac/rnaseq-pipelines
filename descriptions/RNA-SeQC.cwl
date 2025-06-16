@@ -38,12 +38,12 @@ inputs:
 
   - id: strandedness
     type: string
-    default: null
+    default: "unstranded"
     inputBinding:
       position: 4
       prefix: --stranded
-    doc: Strandedness for stranded libraries. |
-         "rf" or "fr"
+    doc: Strandedness for the library. |
+         Accepted values are "rf" or "fr" or "unstranded"
 
 outputs:
   - id: output_gene_tpm_tsv

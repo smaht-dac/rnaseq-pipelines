@@ -28,12 +28,13 @@ inputs:
          Expect a compressed archive. |
          The file prefix inside the archive need to be rsem_reference
 
-  - id: is_stranded
+  - id: strandedness
     type: string
-    default: "false"
+    default: "unstranded"
     inputBinding:
       position: 3
-    doc: Set to "true" if the protocol is strand-specific
+    doc: Strandedness for the library. |
+         Accepted values are "rf" or "fr" or "unstranded"
 
 outputs:
   - id: output_isoforms_tsv
