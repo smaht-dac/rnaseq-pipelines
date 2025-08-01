@@ -101,7 +101,7 @@ sentieon STAR \
   --outFilterScoreMinOverLread 0.33 \
   --outFilterMatchNmin 0 \
   --outFilterMatchNminOverLread 0.33 \
-  --limitSjdbInsertNsj 1200000 \
+  --limitSjdbInsertNsj 1400000 \
   --outSAMstrandField intronMotif \
   --outFilterIntronMotifs None \
   --alignSoftClipAtReferenceEnds Yes \
