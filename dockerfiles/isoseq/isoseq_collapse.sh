@@ -30,7 +30,7 @@ output_prefix=$3
 
 # Run isoseq collapse
 echo "Running isoseq collapse..."
-isoseq collapse --do-not-collapse-extra-5exons $input_bam $flnc_bam ${output_prefix}.gff || {
+isoseq collapse $input_bam $flnc_bam ${output_prefix}.gff || {
     echo "Error: isoseq collapse failed!"
     exit 1
 }
